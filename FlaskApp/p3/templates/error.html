@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Unauthorized Access:: Flask Blog App</title>
+  
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="/static/css/signup.css" rel="stylesheet">
+       
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <nav>
+           <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="/showSignin">Sign In</a></li>
+ 	    <li role="presentation"><a href="/showSignUp">Sign Up</a></li>
+          </ul>
+        </nav>
+        <img src="/static/images/Flask_Icon.png" alt="Flask_Icon.png"/ >
+      </div>
+
+      <div class="jumbotron">
+        <h1>{{error}}</h1>        
+      </div>
+      
+      <footer class="footer">
+        <p>&copy;etaman.com 2017</p>
+      </footer>
+
+    </div>
+  </body>
+</html>

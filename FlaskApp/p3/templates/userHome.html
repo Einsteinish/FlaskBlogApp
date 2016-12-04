@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Python Flask Blog App</title>
+   
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="/static/css/signup.css" rel="stylesheet">
+    <script src="/static/js/jquery-3.1.1.js"></script>
+    <!--<script>
+      $(function() {
+        $.ajax({
+            url: '/getBlog',
+            type: 'GET',
+            success: function(res) {
+                console.log(res);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+      });
+    </script>  -->
+    <script>
+      $(function(){
+        $.ajax({
+          url : '/getBlog',
+          type : 'GET',
+          success: function(res){
+            var div = $('<div>')
+                .attr('class', 'list-group')
+                .append($('<a>')
+                .attr('class', 'list-group-item active')
+                .append($('<h4>')
+                .attr('class', 'list-group-item-heading'),
+                $('<p>')
+                .attr('class', 'list-group-item-text')));
+
+            var blogObj = JSON.parse(res);
+            var blog = '';
+            
+            $.each(blogObj,function(index, value){
+              blog = $(div).clone();
+              $(blog).find('h4').text(value.Title);
+              $(blog).find('p').text(value.Description);
+              $('.jumbotron').append(blog);
+            });
+          },
+          error: function(error){
+            console.log(error);
+          }
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="/showAddBlog">Add Blog</a></li>
+            <li role="presentation" class="active"><a href="/logout">Logout</a></li>
+          </ul>
+        </nav>
+        <img src="/static/images/Flask_Icon.png" alt="Flask_Icon.png"/ >
+      </div>
+
+      <div class="jumbotron">
+        <h1>Welcome Home !!</h1>
+       
+      </div>      
+
+      <footer class="footer">
+        <p>&copy;etaman.com 2017</p>
+      </footer>
+
+    </div>
+  </body>
+</html>
