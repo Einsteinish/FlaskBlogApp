@@ -6,6 +6,10 @@ import uuid
 
 mysql = MySQL()
 app = Flask(__name__)
+
+app.config.from_object('config')
+
+'''
 app.secret_key = 'spooky action at a distance-Einstein'
 
 # MySQL configurations
@@ -14,6 +18,7 @@ app.config['MYSQL_DATABASE_PASSWORD'] = 'khong'
 app.config['MYSQL_DATABASE_DB'] = 'FlaskBlogApp'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 app.config['UPLOAD_FOLDER'] = 'static/Uploads'
+'''
 
 mysql.init_app(app)
 
