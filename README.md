@@ -20,4 +20,4 @@ Tutorials
 
 8. [Deploy](http://www.bogotobogo.com/python/Flask/Python_Flask_Blog_App_Tutorial_8.php)
 
-A. [Appendix (tables and mysql stored procedures/functions](http://www.bogotobogo.com/python/Flask/Python_Flask_Blog_App_Tutorial_Appendix.php)
+9. [Appendix (tables and mysql stored procedures/functions](http://www.bogotobogo.com/python/Flask/Python_Flask_Blog_App_Tutorial_Appendix.php)
